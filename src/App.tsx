@@ -1,12 +1,15 @@
+import { Box, Button, Heading, Text } from "@chakra-ui/react";
 import "./App.css";
+import { colors } from "./constants/theme/colors";
 
 function App() {
   return (
     <>
-      <div className="root">
-        <h2 className="title">Welcome to ePasal</h2>
-        <p className="subHead">powered by G-group</p>
-      </div>
+      <Box className="root" h={"auto"} width={"100vw"}>
+        <Heading>Welcome to ePasal</Heading>
+        <Text>powered by G-group</Text>
+        <Button background={colors.primary.primary_01}>Join Us</Button>
+      </Box>
     </>
   );
 }
