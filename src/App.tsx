@@ -1,8 +1,8 @@
-import { Box, Button, Heading, Text } from "@chakra-ui/react";
 import "./App.css";
-import { colors } from "./constants/theme/colors";
+// import { colors } from "./constants/theme/colors";
 import { useNavigate } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
+import { Paper, Button } from "@mantine/core";
 
 const App = () => {
   const navigate = useNavigate();
@@ -12,18 +12,16 @@ const App = () => {
   };
   return (
     <>
-      <Box border={"1px solid red"} className="root" h={"auto"} width={"100vw"}>
-        <Heading>Welcome to ePasal</Heading>
-        <Text>powered by G-group</Text>
-        <Button background={colors.primary.primary_01} onClick={onClick}>
-          Join Us
-        </Button>
+      <Paper className="root" h={"auto"}>
+        <h2>Welcome to epasal</h2>
+        <p>powered by G-group</p>
+        <Button onClick={onClick}>Join Us</Button>
         <Routes>
-          <Route path={"/"} element={<Box>Welcome</Box>} />
+          <Route path={"/"} element={<Paper>Welcome</Paper>} />
 
-          <Route path={"/epasal/join-Us"} element={<Box>Page Not Found</Box>} />
+          <Route path={"*"} element={<Paper>Page Not Found</Paper>} />
         </Routes>
-      </Box>
+      </Paper>
     </>
   );
 };
