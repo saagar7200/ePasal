@@ -94,11 +94,11 @@ import {
   IconButton,
   Image,
 } from "@chakra-ui/react";
-import { FaOpencart } from "react-icons/fa";
 
 import ToggleColoMode from "../atoms/ToggleColoMode";
 import { colors } from "@constants/theme/colors";
 import image from "@constants/image";
+import { FaOpencart } from "react-icons/fa";
 
 interface Props {
   children: React.ReactNode;
