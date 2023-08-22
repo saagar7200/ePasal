@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Input } from "@chakra-ui/react";
-import React, { FC } from "react";
+import { FC } from "react";
 
 interface IProps {
   onChange: () => void;
