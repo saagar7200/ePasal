@@ -1,5 +1,4 @@
-import { Avatar, Box, Text } from "@chakra-ui/react";
-import { Stack } from "tabler-icons-react";
+import { Avatar, Box, Text, Stack } from "@chakra-ui/react";
 
 const UserAccountMenu = () => {
   return (
