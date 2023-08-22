@@ -17,7 +17,7 @@
     "baseUrl": "./",
     "paths": {
       "@*":["src/*"],
-      "@ui*":["src/ui/*"],
+      "@UI*":["src/UI/*"],
       "@lib":["src/lib/*"],
       "@assets":["src/assets/*"],
       "@constants":["src/constants/*"],
@@ -29,6 +29,7 @@
       "@hooks":["src/hooks/*"],
       "@provider":["src/provider/*"],
       "@contexts":["src/contexts/*"],
+      "@routes":["src/routes/*"],
     },
 
     /* Linting */

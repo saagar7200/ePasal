@@ -13,7 +13,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "@ui": path.resolve(__dirname, "./src/ui"),
+      "@UI": path.resolve(__dirname, "./src/UI"),
       "@assets": path.resolve(__dirname, "./src/assets"),
       "@api": path.resolve(__dirname, "./src/api"),
       "@constants": path.resolve(__dirname, "./src/constants"),
@@ -21,6 +21,11 @@ export default defineConfig({
       "@types": path.resolve(__dirname, "./src/types"),
       "@utils": path.resolve(__dirname, "./src/utils"),
       "@interfaces": path.resolve(__dirname, "./src/interfaces"),
+      "@contexts": path.resolve(__dirname, "./src/contexts"),
+      "@routes": path.resolve(__dirname, "./src/routes"),
+      "@hooks": path.resolve(__dirname, "./src/hooks"),
+      "@provider": path.resolve(__dirname, "./src/provider"),
+
     },
   },
 })

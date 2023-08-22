@@ -1,5 +1,5 @@
 import useLang from "@hooks/useLanguage";
-import { Button, Stack } from "@mantine/core";
+import { Button, Stack } from "@chakra-ui/react";
 
 const ToggleLanguage = () => {
   const { lang, setLang } = useLang();
@@ -12,14 +12,14 @@ const ToggleLanguage = () => {
     <Stack>
       <Button
         bg={"white"}
-        // width={"100px"}
+        w={"100px"}
         size="md"
-        // fontSize={"md"}
-        // fontWeight={500}
+        fontSize={"md"}
+        fontWeight={500}
         variant={"outline"}
         // colorScheme="facebook"
         onClick={switchLanguage}
-        // borderRadius={6}
+        borderRadius={6}
         // height={10}
       >
         {lang === "en" ? "English" : "नेपाली"}

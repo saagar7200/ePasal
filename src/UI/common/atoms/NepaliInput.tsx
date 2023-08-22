@@ -1,5 +1,5 @@
 import { nepaliUnicodes } from "@constants/config/unicode";
-import { Input, Textarea } from "@mantine/core";
+import { Input, Textarea } from "@chakra-ui/react";
 import React, { forwardRef } from "react";
 
 interface IProps {

@@ -1,5 +1,5 @@
 
-import { ColorScheme } from '@mantine/core';
+import { ColorScheme } from '@chakra-ui/react';
 import { useHotkeys, useLocalStorage } from '@mantine/hooks';
 
 const useColorMode = () => {

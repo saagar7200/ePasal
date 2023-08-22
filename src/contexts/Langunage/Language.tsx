@@ -1,22 +1,14 @@
-import { langungeType } from "@constants/multiLanguage";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createContext, useEffect, useState } from "react";
 
 interface Props {
   children: React.ReactNode;
 }
-export interface LanguageContextType {
-  lang: langungeType;
-  setLang: React.Dispatch<React.SetStateAction<langungeType>>;
-}
-
-export const LanguageContext = createContext<LanguageContextType>({
-  lang: "ne",
-  setLang: () => {},
-});
+export const LanguageContext = createContext<any>(null);
 
 const LanguageProvider = ({ children }: Props) => {
-  const [language, setLanguage] = useState<langungeType>(
-    JSON.parse(localStorage.getItem("lang") ?? "ne")
+  const [language, setLanguage] = useState(
+    localStorage.getItem("lang") ?? "ne"
   );
 
   useEffect(() => {

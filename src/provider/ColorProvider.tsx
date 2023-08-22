@@ -1,41 +1,15 @@
 import React, { FC, ReactNode } from "react";
-import {
-  ColorScheme,
-  ColorSchemeProvider,
-  MantineProvider,
-} from "@mantine/core";
-import { useLocalStorage, useHotkeys } from "@mantine/hooks";
+import { ChakraProvider } from "@chakra-ui/react";
 interface IProps {
   children: ReactNode;
 }
 
 const ColorProvider: FC<IProps> = ({ children }) => {
-  const colorMode = JSON.parse(localStorage.getItem("colorMode") ?? "");
-  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
-    key: "colorMode",
-    defaultValue: colorMode ?? "light",
-    getInitialValueInEffect: true,
-  });
-
-  const toggleColorScheme = (value?: ColorScheme) =>
-    setColorScheme(value || colorScheme === "dark" ? "light" : "dark");
-
-  useHotkeys([["mod+k", () => toggleColorScheme()]]);
+  // const colorMode = JSON.parse(localStorage.getItem("colorMode") ?? "");
 
   return (
     <>
-      <ColorSchemeProvider
-        colorScheme={colorScheme}
-        toggleColorScheme={toggleColorScheme}
-      >
-        <MantineProvider
-          theme={{ colorScheme }}
-          withGlobalStyles
-          withNormalizeCSS
-        >
-          {children}
-        </MantineProvider>
-      </ColorSchemeProvider>
+      <ChakraProvider>{children}</ChakraProvider>
     </>
   );
 };

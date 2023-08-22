@@ -1,8 +1,10 @@
-import { LanguageContext, LanguageContextType } from "@contexts/Langunage/Language";
+import { LanguageContext } from "@contexts/Langunage/Language";
 import { useContext } from "react";
 
-
-
-const useLang = () => useContext<LanguageContextType>(LanguageContext);
+interface LanguageProps {
+    lang: "en" | "ne";
+    setLang: (lang: "en" | "ne") => void;
+}
+const useLang = () => useContext<LanguageProps>(LanguageContext);
 
 export default useLang;

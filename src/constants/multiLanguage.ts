@@ -3,4 +3,4 @@ export interface MultiLanguageInterface {
   ne: string;
 }
 
-export type langungeType = 'en' | 'ne'
+export type langungeType = 'en' | 'ne' 
