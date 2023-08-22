@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { PasswordInput } from "@chakra-ui/react";
+import { Input } from "@chakra-ui/react";
 import React, { FC } from "react";
 
 interface IProps {
@@ -10,12 +10,10 @@ interface IProps {
 export const CustomPasswordInput: FC<IProps> = (props) => {
   const { onChange, ref } = props;
   return (
-    <PasswordInput
+    <Input
       ref={ref}
+      type="password"
       placeholder="Password"
-      label="Password"
-      description="Password must include at least one letter, number and special character"
-      withAsterisk
       onChange={onChange}
     />
   );
