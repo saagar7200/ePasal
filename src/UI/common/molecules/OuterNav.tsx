@@ -93,11 +93,13 @@ import {
   Stack,
   Center,
   IconButton,
+  Image,
 } from "@chakra-ui/react";
 import { FaOpencart } from "react-icons/fa";
 
 import ToggleColoMode from "../atoms/ToggleColoMode";
 import { colors } from "@constants/theme/colors";
+import image from "@constants/image";
 
 interface Props {
   children: React.ReactNode;
@@ -171,10 +173,18 @@ export default function OuterNav() {
     <>
       <Box bg={useColorModeValue("#fff", "#fff")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <Box>Logo</Box>
+          <Flex sx={{ cursor: "pointer" }} h={"100%"}>
+            <Image
+              w={150}
+              h={"100%"}
+              src={image.Logo}
+              objectFit={"cover"}
+              alt="With default placeholder"
+            />
+          </Flex>
 
           <Flex alignItems={"center"}>
-            <Stack direction={"row"} spacing={7}>
+            <Stack direction={"row"} spacing={1}>
               <NavLink>
                 <IconButton
                   bg={colors?.primary?.primary_backgroud}
