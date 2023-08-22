@@ -129,7 +129,7 @@ const NavLink = (props: Props) => {
 
 const AvatarMenu = () => {
   return (
-    <>
+    <Box>
       <Menu>
         <MenuButton
           as={Button}
@@ -162,7 +162,7 @@ const AvatarMenu = () => {
           <MenuItem>Logout</MenuItem>
         </MenuList>
       </Menu>
-    </>
+    </Box>
   );
 };
 
@@ -170,7 +170,11 @@ export default function OuterNav() {
   // const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Box bg={useColorModeValue("#fff", "#fff")} px={4}>
+      <Box
+        bg={useColorModeValue("#fff", "#fff")}
+        _dark={{ background: "#1a202c" }}
+        px={4}
+      >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Flex sx={{ cursor: "pointer" }} h={"100%"}>
             <Image
