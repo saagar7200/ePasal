@@ -1,6 +1,4 @@
 import BottomRoundClipBox from "@UI/common/atoms/BottomRoundClipBox";
-import CustomInput from "@UI/common/atoms/TextInput";
-import TextInput from "@UI/common/atoms/TextInput";
 import BreadCrumbHeader from "@UI/common/molecules/BreadCrumbHeader";
 import NavBar from "@UI/common/molecules/Navbar";
 import OuterNav from "@UI/common/molecules/OuterNav";
