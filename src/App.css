@@ -1,7 +1,23 @@
 #root {
+  max-width: "100vh";
   margin: 0 auto;
   padding: 0;
   text-align: center;
+  position: relative;
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 /*

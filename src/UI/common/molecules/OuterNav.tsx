@@ -100,32 +100,32 @@ import { colors } from "@constants/theme/colors";
 import image from "@constants/image";
 import { FaOpencart } from "react-icons/fa";
 
-interface Props {
-  children: React.ReactNode;
-}
+// interface Props {
+//   children: React.ReactNode;
+// }
 
-const NavLink = (props: Props) => {
-  const { children } = props;
+// const NavLink = (props: Props) => {
+//   const { children } = props;
 
-  return (
-    <Box
-      as="a"
-      px={2}
-      py={1}
-      rounded={"md"}
-      _hover={{
-        textDecoration: "none",
-        bg: useColorModeValue(
-          colors?.primary?.primary_backgroud,
-          colors?.primary?.primary_backgroud
-        ),
-      }}
-      href={"#"}
-    >
-      {children}
-    </Box>
-  );
-};
+//   return (
+//     <Box
+//       as="a"
+//       px={2}
+//       py={1}
+//       rounded={"md"}
+//       _hover={{
+//         textDecoration: "none",
+//         bg: useColorModeValue(
+//           colors?.primary?.primary_backgroud,
+//           colors?.primary?.primary_backgroud
+//         ),
+//       }}
+//       href={"#"}
+//     >
+//       {children}
+//     </Box>
+//   );
+// };
 
 const AvatarMenu = () => {
   return (
@@ -169,11 +169,16 @@ const AvatarMenu = () => {
 export default function OuterNav() {
   // const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <>
+    <Box position={"relative"} inset={0}>
       <Box
         bg={useColorModeValue("#fff", "#fff")}
         _dark={{ background: "#1a202c" }}
         px={4}
+        position={"sticky"}
+        top={0}
+        right={0}
+        left={0}
+        zIndex={"sticky"}
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Flex sx={{ cursor: "pointer" }} h={"100%"}>
@@ -188,24 +193,20 @@ export default function OuterNav() {
 
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={1}>
-              <NavLink>
-                <IconButton
-                  bg={colors?.primary?.primary_backgroud}
-                  aria-label="cart"
-                  _hover={{ background: "white" }}
-                >
-                  <FaOpencart style={{ color: "blue", fontSize: "26px" }} />
-                </IconButton>
-              </NavLink>
-              <NavLink>
-                <IconButton
-                  bg={colors?.primary?.primary_backgroud}
-                  aria-label="cart"
-                  _hover={{ background: "white" }}
-                >
-                  <FaOpencart style={{ color: "blue", fontSize: "26px" }} />
-                </IconButton>
-              </NavLink>
+              <IconButton
+                bg={colors?.primary?.primary_backgroud}
+                aria-label="cart"
+                _hover={{ background: "white" }}
+              >
+                <FaOpencart style={{ color: "blue", fontSize: "26px" }} />
+              </IconButton>
+              <IconButton
+                bg={colors?.primary?.primary_backgroud}
+                aria-label="cart"
+                _hover={{ background: "white" }}
+              >
+                <FaOpencart style={{ color: "blue", fontSize: "26px" }} />
+              </IconButton>
             </Stack>
             <Stack direction={"row"} spacing={7}>
               <ToggleColoMode />
@@ -214,6 +215,6 @@ export default function OuterNav() {
           </Flex>
         </Flex>
       </Box>
-    </>
+    </Box>
   );
 }
