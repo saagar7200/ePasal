@@ -16,10 +16,19 @@ interface IProps {
   required?: boolean;
   onChange?: () => void;
   type: "text" | "email" | "password" | "number";
+  placeholder: string;
 }
 const CustomInput: FC<IProps> = (props) => {
-  const { errorMessage, value, register, onChange, label, required, type } =
-    props;
+  const {
+    errorMessage,
+    value,
+    register,
+    onChange,
+    label,
+    required,
+    type,
+    placeholder,
+  } = props;
   return (
     <FormControl isInvalid={!!errorMessage}>
       <FormLabel display={"flex"} alignItems={"center"}>
@@ -34,6 +43,7 @@ const CustomInput: FC<IProps> = (props) => {
         type={type}
         value={value}
         onChange={onChange}
+        placeholder={placeholder}
       />
 
       <FormErrorMessage>{errorMessage}</FormErrorMessage>
