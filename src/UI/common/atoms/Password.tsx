@@ -37,13 +37,21 @@ export const CustomPasswordInput: FC<IProps> = (props) => {
   const [show, setShow] = useState(false);
   return (
     <FormControl isInvalid={!!errorMessage} gap={0}>
-      <FormLabel m={0} display={"flex"} alignItems={"center"} gap={"1px"}>
+      <FormLabel
+        m={0}
+        mb={1}
+        display={"flex"}
+        alignItems={"center"}
+        gap={"1px"}
+      >
         {label}
         {required ? <RequireSign /> : ""}
       </FormLabel>
 
       <InputGroup size="md">
         <Input
+          pr={0}
+          py={5}
           value={value}
           ref={ref}
           type={show ? "text" : "password"}
@@ -53,11 +61,19 @@ export const CustomPasswordInput: FC<IProps> = (props) => {
           size={"md"}
         />
 
-        <InputRightElement width="4.5rem">
+        <InputRightElement width="3.5rem" py={5}>
           {show ? (
-            <ViewIcon onClick={() => setShow((p) => !p)} />
+            <ViewIcon
+              cursor={"pointer"}
+              onClick={() => setShow((p) => !p)}
+              fontSize={"19px"}
+            />
           ) : (
-            <ViewOffIcon onClick={() => setShow((p) => !p)} />
+            <ViewOffIcon
+              fontSize={"19px"}
+              cursor={"pointer"}
+              onClick={() => setShow((p) => !p)}
+            />
           )}
         </InputRightElement>
       </InputGroup>

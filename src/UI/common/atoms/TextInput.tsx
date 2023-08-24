@@ -33,12 +33,13 @@ const CustomInput: FC<IProps> = (props) => {
   } = props;
   return (
     <FormControl isInvalid={!!errorMessage}>
-      <FormLabel m={0} display={"flex"} alignItems={"center"}>
+      <FormLabel m={0} mb={1} display={"flex"} alignItems={"center"}>
         {label}
         {required ? <RequireSign /> : ""}
       </FormLabel>
 
       <Input
+        py={5}
         type={type}
         value={value}
         placeholder={placeholder}

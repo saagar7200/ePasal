@@ -26,10 +26,12 @@ const LonginForm = () => {
   };
 
   return (
-    <Box>
+    <Box px={2} py={4}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Grid templateColumns={`repeat(2,1fr)`}>
-          {watch("email")}
+        <Grid
+          gap={4}
+          templateColumns={{ sm: `repeat(1,1fr)`, md: `repeat(2,1fr)` }}
+        >
           <GridItem>
             <CustomInput
               required
