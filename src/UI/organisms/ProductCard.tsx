@@ -1,3 +1,4 @@
+import { StarIcon } from "@chakra-ui/icons";
 import {
   Button,
   ButtonGroup,
@@ -5,34 +6,80 @@ import {
   CardBody,
   CardFooter,
   Divider,
-  Heading,
   Image,
-  Stack,
-  Text,
+  Box,
+  Badge,
 } from "@chakra-ui/react";
 
 import React from "react";
+import {} from "tabler-icons-react";
 
 const ProductCard = () => {
+  const property = {
+    imageUrl: "https://bit.ly/2Z4KKcF",
+    imageAlt: "Rear view of modern home with pool",
+    beds: 3,
+    baths: 2,
+    title: "Modern home in city center in the heart of historic Los Angeles",
+    formattedPrice: "$1,900.00",
+    reviewCount: 34,
+    rating: 4,
+  };
   return (
     <Card maxW="sm">
       <CardBody>
-        <Image
-          src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-          alt="Green double couch with wooden legs"
-          borderRadius="lg"
-        />
-        <Stack mt="6" spacing="3">
-          <Heading size="md">Living room Sofa</Heading>
-          <Text>
-            This sofa is perfect for modern tropical spaces, baroque inspired
-            spaces, earthy toned spaces and for people who love a chic design
-            with a sprinkle of vintage design.
-          </Text>
-          <Text color="blue.600" fontSize="2xl">
-            $450
-          </Text>
-        </Stack>
+        <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+          <Image src={property.imageUrl} alt={property.imageAlt} />
+
+          <Box p="6">
+            <Box display="flex" alignItems="baseline">
+              <Badge borderRadius="full" px="2" colorScheme="teal">
+                New
+              </Badge>
+              <Box
+                color="gray.500"
+                fontWeight="semibold"
+                letterSpacing="wide"
+                fontSize="xs"
+                textTransform="uppercase"
+                ml="2"
+              >
+                {property.beds} beds &bull; {property.baths} baths
+              </Box>
+            </Box>
+
+            <Box
+              mt="1"
+              fontWeight="semibold"
+              as="h4"
+              lineHeight="tight"
+              noOfLines={1}
+            >
+              {property.title}
+            </Box>
+
+            <Box>
+              {property.formattedPrice}
+              <Box as="span" color="gray.600" fontSize="sm">
+                / wk
+              </Box>
+            </Box>
+
+            <Box display="flex" mt="2" alignItems="center">
+              {Array(5)
+                .fill("")
+                .map((_, i) => (
+                  <StarIcon
+                    key={i}
+                    color={i < property.rating ? "teal.500" : "gray.300"}
+                  />
+                ))}
+              <Box as="span" ml="2" color="gray.600" fontSize="sm">
+                {property.reviewCount} reviews
+              </Box>
+            </Box>
+          </Box>
+        </Box>
       </CardBody>
       <Divider />
       <CardFooter>
