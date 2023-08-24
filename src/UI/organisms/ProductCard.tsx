@@ -11,9 +11,6 @@ import {
   Badge,
 } from "@chakra-ui/react";
 
-import React from "react";
-import {} from "tabler-icons-react";
-
 const ProductCard = () => {
   const property = {
     imageUrl: "https://bit.ly/2Z4KKcF",
