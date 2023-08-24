@@ -169,7 +169,7 @@ const AvatarMenu = () => {
 export default function OuterNav() {
   // const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box position={"relative"} inset={0}>
+    <Box>
       <Box
         bg={useColorModeValue("#fff", "#fff")}
         _dark={{ background: "#1a202c" }}
@@ -178,7 +178,6 @@ export default function OuterNav() {
         top={0}
         right={0}
         left={0}
-        zIndex={"sticky"}
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Flex sx={{ cursor: "pointer" }} h={"100%"}>

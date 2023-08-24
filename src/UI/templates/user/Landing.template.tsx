@@ -11,9 +11,11 @@ const LandingPageTemplate = () => {
   return (
     <Box h={"100vh"} w={"100vw"}>
       <OuterNav />
-      <BottomRoundClipBox />
-
+      <Box position={"static"}>
+        <BottomRoundClipBox />
+      </Box>
       <NavBar />
+
       <Box mt={1} px={4}>
         <BreadCrumbHeader baseUrl="home" />
       </Box>

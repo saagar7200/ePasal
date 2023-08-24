@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Box,
   Flex,
@@ -13,7 +11,6 @@ import {
   MenuItem,
   MenuDivider,
   useDisclosure,
-  useColorModeValue,
   Stack,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
@@ -22,21 +19,27 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Links = ["Dashboard", "Projects", "Team"];
+const Links = [
+  "Home",
+  "Dry Vegitables",
+  "3D/2D printing services",
+  "Fashions",
+  "Liquor",
+];
 
 const NavLink = (props: Props) => {
   const { children } = props;
 
   return (
     <Box
-      border={"1px solid red"}
       as="a"
       px={2}
       py={1}
       rounded={"md"}
       _hover={{
         textDecoration: "none",
-        bg: useColorModeValue("gray.200", "gray.700"),
+        backgroundColor: "inherit",
+        border: "1px solid grey",
       }}
       href={"#"}
     >
@@ -50,8 +53,16 @@ export default function NavBar() {
 
   return (
     <>
-      <Box bg={"#3182ce"} px={4}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+      <Box>
+        <Flex
+          h={16}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          position={"sticky"}
+          top={0}
+          bg={"#3182ce"}
+          zIndex={999}
+        >
           <IconButton
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}

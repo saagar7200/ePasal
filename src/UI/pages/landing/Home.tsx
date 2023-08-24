@@ -13,7 +13,7 @@ const Home = () => {
         }}
         gap={6}
       >
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, index: number) => (
+        {Array.from({ length: 100 }).map((_, index: number) => (
           <GridItem key={index}>
             <ProductCard />
           </GridItem>
