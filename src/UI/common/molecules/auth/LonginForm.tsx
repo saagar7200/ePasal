@@ -39,7 +39,7 @@ const LonginForm = () => {
               name={"email"}
               placeholder="Enter your email"
               errorMessage={errors?.message?.email}
-              type="text"
+              type="email"
             />
           </GridItem>
           <GridItem>
