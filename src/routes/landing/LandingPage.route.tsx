@@ -1,3 +1,4 @@
+import Home from "@UI/pages/landing/Home";
 import LandingPageTemplate from "@UI/templates/user/Landing.template";
 import { Box } from "@chakra-ui/react";
 
@@ -6,6 +7,10 @@ export const LandingRoute = [
     path: "",
     element: <LandingPageTemplate />,
     children: [
+      {
+        path: "",
+        element: <Home />,
+      },
       {
         path: "agri",
         element: <Box>hello agri home</Box>,

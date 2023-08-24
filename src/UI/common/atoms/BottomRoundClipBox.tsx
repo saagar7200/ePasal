@@ -8,8 +8,7 @@ const BottomRoundClipBox = () => {
       width={"100%"}
       height={"calc(100vh - 50px)"}
       style={{
-        clipPath:
-          "polygon(100% 0, 100% 23%, 100% 35%, 100% 70%, 94% 79%, 81% 92%, 66% 97%, 44% 100%, 0 100%, 0 0)",
+        clipPath: "polygon(0% 0.5%, 100% 0%, 100% 88.8%, 48.4% 100%, 0% 88.8%)",
       }}
     ></Box>
   );
