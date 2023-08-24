@@ -1,5 +1,10 @@
+import {
+  SignInWithFacebook,
+  SignInWithGoogle,
+} from "@UI/common/atoms/IconButton";
+import { CancelButton, SaveButton } from "@UI/common/atoms/TextButton";
 import ProductCard from "@UI/organisms/ProductCard";
-import { Box, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem } from "@chakra-ui/react";
 
 const Home = () => {
   return (
@@ -13,6 +18,15 @@ const Home = () => {
         }}
         gap={6}
       >
+        <Flex gap={5}>
+          <SignInWithGoogle />
+          <SignInWithFacebook />
+        </Flex>
+        <Flex gap={5}>
+          <SaveButton />
+          <CancelButton />
+        </Flex>
+
         {Array.from({ length: 100 }).map((_, index: number) => (
           <GridItem key={index}>
             <ProductCard />

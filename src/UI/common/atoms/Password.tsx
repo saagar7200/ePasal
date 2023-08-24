@@ -20,7 +20,7 @@ interface IProps {
   onChange?: () => void;
   placeholder: string;
   name: string;
-  ref: any;
+  ref?: any;
 }
 
 export const CustomPasswordInput: FC<IProps> = (props) => {
@@ -36,13 +36,13 @@ export const CustomPasswordInput: FC<IProps> = (props) => {
   } = props;
   const [show, setShow] = useState(false);
   return (
-    <FormControl isInvalid={!!errorMessage}>
-      <FormLabel display={"flex"} alignItems={"center"}>
+    <FormControl isInvalid={!!errorMessage} gap={0}>
+      <FormLabel m={0} display={"flex"} alignItems={"center"} gap={"1px"}>
         {label}
         {required ? <RequireSign /> : ""}
       </FormLabel>
 
-      <InputGroup size="sm">
+      <InputGroup size="md">
         <Input
           value={value}
           ref={ref}
@@ -50,12 +50,9 @@ export const CustomPasswordInput: FC<IProps> = (props) => {
           placeholder="passowrd"
           onChange={onChange}
           {...register(name)}
+          size={"md"}
         />
-        <Input
-          pr="4.5rem"
-          type={show ? "text" : "password"}
-          placeholder="Enter password"
-        />
+
         <InputRightElement width="4.5rem">
           {show ? (
             <ViewIcon onClick={() => setShow((p) => !p)} />

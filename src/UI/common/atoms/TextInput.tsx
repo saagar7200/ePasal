@@ -10,13 +10,14 @@ import RequireSign from "./RequireSign";
 
 interface IProps {
   label: string;
-  errorMessage: string;
+  errorMessage?: string;
   value: string;
   register: any;
   required?: boolean;
   onChange?: () => void;
   type: "text" | "email" | "password" | "number";
   placeholder: string;
+  name: string;
 }
 const CustomInput: FC<IProps> = (props) => {
   const {
@@ -28,25 +29,24 @@ const CustomInput: FC<IProps> = (props) => {
     required,
     type,
     placeholder,
+    name,
   } = props;
   return (
     <FormControl isInvalid={!!errorMessage}>
-      <FormLabel display={"flex"} alignItems={"center"}>
+      <FormLabel m={0} display={"flex"} alignItems={"center"}>
         {label}
         {required ? <RequireSign /> : ""}
       </FormLabel>
 
       <Input
-        borderColor={"blue"}
-        size={"lg"}
-        {...register}
         type={type}
         value={value}
-        onChange={onChange}
         placeholder={placeholder}
+        onChange={onChange ? onChange : ""}
+        {...register(name)}
       />
 
-      <FormErrorMessage>{errorMessage}</FormErrorMessage>
+      {errorMessage ? <FormErrorMessage>{errorMessage}</FormErrorMessage> : ""}
     </FormControl>
   );
 };
