@@ -50,7 +50,7 @@ export default function NavBar() {
 
   return (
     <>
-      <Box bg={useColorModeValue("blue.200", "blue.800")} px={4}>
+      <Box bg={"#3182ce"} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}

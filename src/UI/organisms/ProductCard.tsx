@@ -23,7 +23,7 @@ const ProductCard = () => {
     rating: 4,
   };
   return (
-    <Card maxW="sm">
+    <Card maxW="sm" cursor={"pointer"}>
       <CardBody>
         <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
           <Image src={property.imageUrl} alt={property.imageAlt} />
@@ -78,7 +78,7 @@ const ProductCard = () => {
           </Box>
         </Box>
       </CardBody>
-      <Divider />
+      <Divider color={"grey"} />
       <CardFooter>
         <ButtonGroup spacing="2">
           <Button variant="solid" colorScheme="blue">
